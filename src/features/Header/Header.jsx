@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { GoSearch } from 'react-icons/go';
+import { FaReddit } from 'react-icons/fa';
 
 export function Header() {
     const onSearchTermChange = (e) => {
@@ -17,7 +18,9 @@ export function Header() {
     return (
         <header>
             <div id='logoBox'>
-                <img src={require('./reddit-logo-2436 (3).png')} alt='Reddit Logo'/>
+                <div className='logoIcon'>
+                    <FaReddit />
+                </div>
                 <h1><span className='reddit'>Reddit</span>Lite</h1>
             </div>
             <form className='search' onSubmit={onSearchTermSubmit}>
