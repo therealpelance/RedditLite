@@ -1,12 +1,23 @@
 import React from 'react';
 import './App.css';
 
-// Component Imports
+// Main Structure Imports
+import { Header } from './features/Header/Header';
+import { MainBody } from './features/MainBody/MainBody';
+import { SideBar } from './features/SideBar/SideBar';
+
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Header />
+      <main>
+        <MainBody />
+      </main>
+      <aside>
+        <SideBar />
+      </aside>
+    </>
   );
 }
 
