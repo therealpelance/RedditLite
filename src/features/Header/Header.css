@@ -1,0 +1,44 @@
+#logoBox {
+    display: flex;
+    grid-column: 1;
+    padding: 10px;
+}
+
+.search {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    background: var(--background-secondary);
+    border: 0.25px solid grey;
+    border-radius: var(--radius);
+    flex-grow: 1;
+    padding: var(--spacing-1) var(--spacing-2);
+    height: max-content;
+}
+
+.search button {
+    background: none;
+    border: none;
+    padding: var(--spacing-1) var(--spacing-2);
+    cursor: pointer;
+    color: var(--reddit-orange);
+    font-size: 1.5rem;
+}
+
+.reddit {
+    color: var(--reddit-orange);
+    font-family: 'VGA Rounded';
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+h1 {
+    margin: 0px;
+}

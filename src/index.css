@@ -24,6 +24,8 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--spacing-2);
   align-content: center;
+  background-color: var(--background-highlight);
+  box-shadow: var(--box-shadow-down);
 }
 
 @media only screen and (max-width: 600px) {
