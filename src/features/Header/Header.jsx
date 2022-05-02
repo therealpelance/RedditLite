@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
 import './Header.css';
 import { GoSearch } from 'react-icons/go';
 import { FaReddit } from 'react-icons/fa';
+import { setSearchTerm } from '../../store/redditSlice';
 
 export function Header() {
-    const onSearchTermChange = (e) => {
-        console.log(e);
-    }
+    const [searchTermLocal, setSearchTermLocal] = useState('');
+    const searchTerm = useSelector((state) => state.reddit.searchTerm);
+    const dispatch = useDispatch();
 
-    const onSearchTermSubmit = (e) => {
-        console.log(e);
+    const onSearchTermChange = (e) => {
+        setSearchTermLocal(e.target.value);
     };
 
-    // REMOVE BEFORE PRODUCTION
-    const tempSearchTermLocal = ""
+    const onSearchTermSubmit = (e) => {
+        e.preventDefault();
+        dispatch(setSearchTerm(searchTermLocal));
+    };
+
+    useEffect(() => {
+        setSearchTermLocal(searchTerm);
+    }, [searchTerm]);
 
     return (
         <header>
@@ -27,7 +35,7 @@ export function Header() {
                 <input 
                     type="text"
                     placeholder='Search'
-                    value={tempSearchTermLocal}
+                    value={searchTermLocal}
                     onChange={onSearchTermChange}
                     aria-label='Search posts'
                 />
