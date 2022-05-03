@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './SideBar.css';
 import Card from '../../components/Card';
-import { selectSubreddits, setType } from '../../store/subredditSlice';
+import { fetchSubreddits, selectSubreddits, setType } from '../../store/subredditSlice';
 import {
     setSelectedSubreddit,
-    selectSelectedSubreddit,
 } from '../../store/redditSlice';
 
 export function SideBar() {
     const [subTypeLocal, setSubTypeLocal] = useState('Popular');
     const subreddits = useSelector(selectSubreddits);
-    const selectedSubreddit = useSelector(selectSelectedSubreddit);
     const dispatch = useDispatch();
 
     const selectSubType = (e) => {
         dispatch(setType(e.target.value));
         setSubTypeLocal(e.target.value);
+        dispatch(fetchSubreddits());
         console.log(e.target.value);
     };
+
+    useEffect(() => {
+        dispatch(fetchSubreddits());
+      }, [dispatch]);
     
     return (
         <Card className='sidebar-card'>
