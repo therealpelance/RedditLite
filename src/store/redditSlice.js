@@ -15,11 +15,18 @@ const redditSlice = createSlice({
         setSearchTerm(state, action) {
             state.searchTerm = action.payload;
         },
+        setSelectedSubreddit(state, action) {
+            state.selectedSubreddit = action.payload;
+            state.searchTerm = '';
+        },
     },
 });
 
 export const {
-    setSearchTerm
+    setSearchTerm,
+    setSelectedSubreddit,
 } = redditSlice.actions;
 
 export default redditSlice.reducer;
+
+export const selectSelectedSubreddit = (state) => state.reddit.selectedSubreddit;
