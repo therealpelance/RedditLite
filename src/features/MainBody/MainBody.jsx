@@ -6,6 +6,7 @@ import {
     fetchComments,
     setSearchTerm,
  } from '../../store/redditSlice';
+import Post from '../Post/Post';
 
 export function MainBody() {
     const reddit = useSelector((state) => state.reddit);
@@ -24,6 +25,14 @@ export function MainBody() {
         };
 
         return getComments;
+    }
+
+    if (isLoading) {
+        return (
+            <div>
+                <p>Temporary Posts Loading Screen</p>
+            </div>
+        );
     }
     
     if (error) {
@@ -54,9 +63,11 @@ export function MainBody() {
     return (
         <>
             {posts.map((post, index) => (
-                <div>
-                    <p>Test</p>
-                </div>
+                <Post
+                    key={post.id}
+                    post={post}
+                    onToggleComments={onToggleComments(index)}
+                />
             ))}
         </>
     );
