@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RedditLite/static/css/main.361cdb61.css",
+    "main.js": "/RedditLite/static/js/main.ef3787ad.js",
+    "index.html": "/RedditLite/index.html",
+    "main.361cdb61.css.map": "/RedditLite/static/css/main.361cdb61.css.map",
+    "main.ef3787ad.js.map": "/RedditLite/static/js/main.ef3787ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.361cdb61.css",
+    "static/js/main.ef3787ad.js"
+  ]
+}
