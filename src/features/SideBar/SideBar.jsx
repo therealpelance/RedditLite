@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './SideBar.css';
 import Card from '../../components/Card';
-import { fetchSubreddits, selectSubreddits, setType } from '../../store/subredditSlice';
+import { 
+    fetchSubreddits, 
+    selectSubreddits 
+} from '../../store/subredditSlice';
 import {
     setSelectedSubreddit,
 } from '../../store/redditSlice';
@@ -13,9 +16,8 @@ export function SideBar() {
     const dispatch = useDispatch();
 
     const selectSubType = (e) => {
-        dispatch(setType(e.target.value));
         setSubTypeLocal(e.target.value);
-        dispatch(fetchSubreddits());
+        dispatch(fetchSubreddits(e.target.value));
         console.log(e.target.value);
     };
 

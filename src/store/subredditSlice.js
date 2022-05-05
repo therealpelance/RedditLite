@@ -5,7 +5,6 @@ const initialState = {
     subreddits: [
 
     ],
-    type: '',
     error: false,
     isLoading: false,
 };
@@ -14,18 +13,15 @@ const subRedditSlice = createSlice({
     name: 'subreddits',
     initialState,
     reducers: {
-        setType (state, action) {
-            state.type = action.payload;
-        },
         startGetSubreddits(state) {
             state.isLoading = true;
             state.error = false;
           },
-          getSubredditsSuccess(state, action) {
+        getSubredditsSuccess(state, action) {
             state.isLoading = false;
             state.subreddits = action.payload;
           },
-          getSubredditsFailed(state) {
+        getSubredditsFailed(state) {
             state.isLoading = false;
             state.error = true;
           },
@@ -33,7 +29,6 @@ const subRedditSlice = createSlice({
 });
 
 export const {
-    setType,
     startGetSubreddits,
     getSubredditsSuccess,
     getSubredditsFailed,
@@ -41,10 +36,19 @@ export const {
 
 export default subRedditSlice.reducer;
 
-export const fetchSubreddits = () => async (dispatch) => {
+export const fetchSubreddits = (type) => async (dispatch) => {
+    const subType = type;
+    let url = 'subreddits';
+    if (subType === 'Popular') {
+        url = 'subreddits';
+    }
+
+    if (subType === 'New') {
+        url = 'subreddits/new';
+    }
     try {
       dispatch(startGetSubreddits());
-      const subreddits = await getSubreddits();
+      const subreddits = await getSubreddits(url);
       dispatch(getSubredditsSuccess(subreddits));
     } catch (error) {
       dispatch(getSubredditsFailed());
