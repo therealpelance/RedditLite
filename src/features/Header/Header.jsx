@@ -34,7 +34,7 @@ export function Header() {
             <form className='search' onSubmit={onSearchTermSubmit}>
                 <input 
                     type="text"
-                    placeholder='Search'
+                    placeholder='Search subreddit'
                     value={searchTermLocal}
                     onChange={onSearchTermChange}
                     aria-label='Search posts'

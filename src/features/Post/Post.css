@@ -41,3 +41,31 @@
     display: flex;
     align-items: center;
 }
+
+.icon-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--reddit-orange);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius);
+}
+
+.icon-action-button:hover {
+    background: var(--background-hover-orange);
+}
+
+.icon-action {
+    font-size: 1.5rem;
+}
+
+.post-comments-container {
+    display: flex;
+    align-items: center;
+}
+
+.post-comments-container .icon-action {
+    margin-right: var(--spacing-0);
+}
