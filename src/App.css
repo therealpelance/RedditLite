@@ -12,6 +12,9 @@
   --color-text-header: #444444;
   --color-text-body: #6f6f6f;
 
+  --color-upvote: #45b81f;
+  --color-downvote: #ff304f;
+
   --spacing-0: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;

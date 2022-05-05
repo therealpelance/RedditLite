@@ -69,3 +69,22 @@
 .post-comments-container .icon-action {
     margin-right: var(--spacing-0);
 }
+
+.post-votes-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-votes-container .post-votes-value {
+    margin: 0 var(--spacing-1);
+    font-weight: bold;
+}
+
+.post-votes-value.up-vote {
+    color: var(--color-upvote);
+}
+
+.post-votes-value.down-vote {
+    color: var(--color-downvote);
+}
