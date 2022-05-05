@@ -7,6 +7,7 @@ import {
     setSearchTerm,
  } from '../../store/redditSlice';
 import Post from '../Post/Post';
+import PostLoading from '../Post/PostLoading';
 
 export function MainBody() {
     const reddit = useSelector((state) => state.reddit);
@@ -29,10 +30,12 @@ export function MainBody() {
 
     if (isLoading) {
         return (
-            <div>
-                <p>Temporary Posts Loading Screen</p>
-            </div>
-        );
+            <>
+                <PostLoading />
+                <PostLoading />
+                <PostLoading />
+            </>
+        )
     }
     
     if (error) {

@@ -3,6 +3,7 @@ import Card from '../../components/Card';
 import ProfilePic from '../ProfilePic/ProfilePic';
 import Comment from '../Comment/Comment';
 import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 import './Post.css';
 import { 
     FaRegCommentAlt,
